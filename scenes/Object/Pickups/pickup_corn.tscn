@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dopkoyrt1vqtf"]
+
+[ext_resource type="Script" path="res://scenes/Object/Pickups/pickup_corn.gd" id="1_l2v83"]
+[ext_resource type="Texture2D" uid="uid://ksfopsv8afvi" path="res://tilemap/plants/Basic Plants.png" id="2_8618x"]
+[ext_resource type="Resource" uid="uid://bef4eiadjqwf4" path="res://scenes/items/Resources/resource_corn.tres" id="2_s7cs4"]
+[ext_resource type="AudioStream" uid="uid://juudcho3y6b1" path="res://sounds/item_pickup.wav" id="3_kv4ro"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rcpk"]
+radius = 6.0
+
+[node name="Pickup_corn" type="Node2D"]
+script = ExtResource("1_l2v83")
+item_data = ExtResource("2_s7cs4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15, 10)
+shape = SubResource("CircleShape2D_3rcpk")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(15, 7)
+texture = ExtResource("2_8618x")
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kv4ro")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

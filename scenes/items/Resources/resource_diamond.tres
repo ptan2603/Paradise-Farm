@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://kaq6cfcclrmj"]
+
+[ext_resource type="Script" path="res://scenes/items/Resources/Resource_item.gd" id="1_8sf8n"]
+[ext_resource type="Texture2D" uid="uid://8ovr6xl3w3bg" path="res://tilemap/Object/diamond.png" id="2_mhhjf"]
+
+[resource]
+resource_name = "Diamond"
+script = ExtResource("1_8sf8n")
+display_name = "Diamond"
+texture = ExtResource("2_mhhjf")

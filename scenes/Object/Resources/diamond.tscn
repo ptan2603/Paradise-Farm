@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://cirks5ljw4r6t"]
+
+[ext_resource type="Script" path="res://scenes/Object/Resources/stone.gd" id="1_f60km"]
+[ext_resource type="Resource" uid="uid://b52wfkrlqb15x" path="res://scenes/Object/Resources/Type/minable.tres" id="2_lt280"]
+[ext_resource type="PackedScene" uid="uid://bkyc1gngq7onc" path="res://scenes/Object/Pickups/pickup_diamond.tscn" id="3_dwjqu"]
+[ext_resource type="PackedScene" uid="uid://cfjgqabojy6ng" path="res://scenes/Effects/depleted_resources_eplosion.tscn" id="4_awr20"]
+[ext_resource type="Texture2D" uid="uid://cdtb3ikbi7iji" path="res://tilemap/Object/Cave_Items_Spritesheet.png" id="5_a5w6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1taw7"]
+atlas = ExtResource("5_a5w6a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3q8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1taw7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_427j2"]
+
+[node name="diamond" type="StaticBody2D"]
+z_index = -2
+script = ExtResource("1_f60km")
+node_types = Array[Resource("res://scenes/Object/Resources/Type/resource_node_type.gd")]([ExtResource("2_lt280")])
+starting_resources = 5
+pickup_type = ExtResource("3_dwjqu")
+depleted_effect = ExtResource("4_awr20")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.25, 1.438)
+sprite_frames = SubResource("SpriteFrames_c3q8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_427j2")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cytmw0sr7lynm"]
+
+[ext_resource type="Script" path="res://scenes/Object/Pickups/pickup.gd" id="1_u4h4m"]
+[ext_resource type="Resource" uid="uid://dj16ptk5tvcxg" path="res://scenes/items/Resources/resource_gold.tres" id="2_lrrt4"]
+[ext_resource type="Texture2D" uid="uid://b2k2dtp86roof" path="res://tilemap/Object/gold.png" id="3_06vhy"]
+[ext_resource type="AudioStream" uid="uid://juudcho3y6b1" path="res://sounds/item_pickup.wav" id="4_yx6jg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3od5"]
+radius = 7.0
+
+[node name="Pickup_gold" type="Node2D"]
+script = ExtResource("1_u4h4m")
+resource_type = ExtResource("2_lrrt4")
+item_data = ExtResource("2_lrrt4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h3od5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_06vhy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yx6jg")

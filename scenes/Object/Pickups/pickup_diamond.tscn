@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkyc1gngq7onc"]
+
+[ext_resource type="Script" path="res://scenes/Object/Pickups/pickup.gd" id="1_5uxpq"]
+[ext_resource type="Resource" uid="uid://kaq6cfcclrmj" path="res://scenes/items/Resources/resource_diamond.tres" id="2_x8kot"]
+[ext_resource type="Texture2D" uid="uid://8ovr6xl3w3bg" path="res://tilemap/Object/diamond.png" id="3_sb7rx"]
+[ext_resource type="AudioStream" uid="uid://juudcho3y6b1" path="res://sounds/item_pickup.wav" id="4_srsot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3od5"]
+radius = 3.0
+
+[node name="Pickup_diamond" type="Node2D"]
+script = ExtResource("1_5uxpq")
+resource_type = ExtResource("2_x8kot")
+item_data = ExtResource("2_x8kot")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h3od5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_sb7rx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_srsot")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://cp7mb7nwpoqht"]
+
+[ext_resource type="Script" path="res://scripts/Select Seed.gd" id="1_vk2rq"]
+[ext_resource type="Texture2D" uid="uid://chwvt36ovxjb3" path="res://tilemap/Cuoc.png" id="2_ubpg7"]
+[ext_resource type="Texture2D" uid="uid://bgt6w8ui8yhpx" path="res://tilemap/Inventory_select.png" id="3_o76ff"]
+[ext_resource type="Texture2D" uid="uid://do5mwun64jmpj" path="res://tilemap/Basic Plants.png" id="4_utxw2"]
+[ext_resource type="Texture2D" uid="uid://c7mporsw8800d" path="res://tilemap/Inventory_Bar.png" id="5_ba6c6"]
+[ext_resource type="Texture2D" uid="uid://bix8bq4uq8a5s" path="res://tilemap/cuocdat.png" id="5_ywp6p"]
+
+[node name="Select Seed" type="Node2D"]
+script = ExtResource("1_vk2rq")
+
+[node name="Seed1" type="Sprite2D" parent="."]
+position = Vector2(27, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ubpg7")
+
+[node name="Select" type="Sprite2D" parent="Seed1"]
+texture = ExtResource("3_o76ff")
+
+[node name="Seed2" type="Sprite2D" parent="."]
+position = Vector2(65, 31)
+scale = Vector2(2, 2)
+texture = ExtResource("4_utxw2")
+hframes = 6
+vframes = 2
+
+[node name="Select" type="Sprite2D" parent="Seed2"]
+visible = false
+position = Vector2(0, 0.5)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed3" type="Sprite2D" parent="."]
+position = Vector2(104, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("4_utxw2")
+hframes = 6
+vframes = 2
+frame = 6
+
+[node name="Select" type="Sprite2D" parent="Seed3"]
+visible = false
+position = Vector2(0, 0.5)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed4" type="Sprite2D" parent="."]
+position = Vector2(142, 31.5)
+scale = Vector2(2, 2.0625)
+texture = ExtResource("5_ywp6p")
+
+[node name="Select" type="Sprite2D" parent="Seed4"]
+visible = false
+position = Vector2(0, 0.5)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed5" type="Sprite2D" parent="."]
+position = Vector2(181, 32)
+scale = Vector2(2, 2)
+
+[node name="Select" type="Sprite2D" parent="Seed5"]
+visible = false
+position = Vector2(-5.96046e-08, 0.5)
+scale = Vector2(0.95, 0.975)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed6" type="Sprite2D" parent="."]
+position = Vector2(219, 32)
+scale = Vector2(2, 2)
+
+[node name="Select" type="Sprite2D" parent="Seed6"]
+visible = false
+position = Vector2(-5.96046e-08, 0.5)
+scale = Vector2(0.95, 0.975)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed7" type="Sprite2D" parent="."]
+position = Vector2(257, 32)
+scale = Vector2(2, 2)
+
+[node name="Select" type="Sprite2D" parent="Seed7"]
+visible = false
+position = Vector2(-5.96046e-08, 0.5)
+scale = Vector2(0.95, 0.975)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed8" type="Sprite2D" parent="."]
+position = Vector2(294, 32)
+scale = Vector2(2, 2)
+
+[node name="Select" type="Sprite2D" parent="Seed8"]
+visible = false
+position = Vector2(-5.96046e-08, 0.5)
+scale = Vector2(0.95, 0.975)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed9" type="Sprite2D" parent="."]
+position = Vector2(332, 32)
+scale = Vector2(2, 2)
+
+[node name="Select" type="Sprite2D" parent="Seed9"]
+visible = false
+position = Vector2(-5.96046e-08, 0.5)
+scale = Vector2(0.95, 0.975)
+texture = ExtResource("3_o76ff")
+
+[node name="Seed10" type="Sprite2D" parent="."]
+position = Vector2(370, 32)
+scale = Vector2(2, 2)
+
+[node name="Select" type="Sprite2D" parent="Seed10"]
+visible = false
+position = Vector2(-5.96046e-08, 0.5)
+scale = Vector2(0.95, 0.975)
+texture = ExtResource("3_o76ff")
+
+[node name="InventoryBar" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(200, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("5_ba6c6")

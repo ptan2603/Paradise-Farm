@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://mfa3umedqgyn"]
+
+[ext_resource type="Script" path="res://scripts/Panel.gd" id="1_auke6"]
+[ext_resource type="FontFile" uid="uid://cw8tvefhfl1gn" path="res://tilemap/PilotCommandSpacedItalic-eZGMl.otf" id="1_o5j12"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pidxx"]
+bg_color = Color(0.992188, 0.988312, 0.988312, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Notification" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+offset_right = 103.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pidxx")
+script = ExtResource("1_auke6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 44.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_o5j12")
+theme_override_font_sizes/font_size = 7
+text = "bạn có muốn bán vật phẩm "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

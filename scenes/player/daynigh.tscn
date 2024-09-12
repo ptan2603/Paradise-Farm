@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://cntrl6p1i7075"]
+
+[ext_resource type="Script" path="res://scenes/player/scripts/daynigh.gd" id="1_mtdkn"]
+[ext_resource type="Texture2D" uid="uid://c43e8ybyyc2ua" path="res://tilemap/daynightcycle-ui.png" id="2_7u4u1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhbnj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8xwu1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5isbm"]
+atlas = ExtResource("2_7u4u1")
+region = Rect2(1, 1, 73, 43)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14tbr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucvpk"]
+atlas = ExtResource("2_7u4u1")
+region = Rect2(2, 47, 16, 5)
+
+[node name="DaynightUI" type="Control"]
+material = SubResource("ShaderMaterial_qhbnj")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mtdkn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_8xwu1")
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 43.0
+texture = SubResource("AtlasTexture_5isbm")
+
+[node name="CenterContainerDay" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 50.0
+offset_bottom = 20.0
+
+[node name="DayLabelBgr" type="Label" parent="CenterContainerDay"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.898039, 0.576471, 0.419608, 1)
+theme_override_font_sizes/font_size = 8
+text = "Day 1
+"
+metadata/_edit_lock_ = true
+
+[node name="DayLabel" type="Label" parent="CenterContainerDay/DayLabelBgr"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = -1.0
+offset_right = 33.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.490196, 0.219608, 0.2, 1)
+theme_override_font_sizes/font_size = 8
+text = "Day 1
+"
+metadata/_edit_lock_ = true
+
+[node name="CenterContainerTime" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 29.0
+offset_right = 51.0
+offset_bottom = 40.0
+
+[node name="TimeLabelBgr" type="Label" parent="CenterContainerTime"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.898039, 0.576471, 0.419608, 1)
+theme_override_font_sizes/font_size = 8
+text = "6:00 am"
+metadata/_edit_lock_ = true
+
+[node name="TimeLabel" type="Label" parent="CenterContainerTime/TimeLabelBgr"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = -1.0
+offset_right = 41.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.490196, 0.219608, 0.2, 1)
+theme_override_font_sizes/font_size = 8
+text = "6:00 am
+"
+metadata/_edit_lock_ = true
+
+[node name="Arrow" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_14tbr")
+layout_mode = 0
+offset_left = 51.0
+offset_top = 19.0
+offset_right = 91.0
+offset_bottom = 59.0
+rotation = -1.60047
+pivot_offset = Vector2(1, 2.5)
+texture = SubResource("AtlasTexture_ucvpk")
+stretch_mode = 2

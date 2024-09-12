@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://dj16ptk5tvcxg"]
+
+[ext_resource type="Script" path="res://scenes/items/Resources/Resource_item.gd" id="1_cfrjf"]
+[ext_resource type="Texture2D" uid="uid://b2k2dtp86roof" path="res://tilemap/Object/gold.png" id="2_yusns"]
+
+[resource]
+resource_name = "Gold"
+script = ExtResource("1_cfrjf")
+display_name = "Gold"
+texture = ExtResource("2_yusns")

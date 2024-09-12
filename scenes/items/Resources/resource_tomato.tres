@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://oi7y7bugw521"]
+
+[ext_resource type="Script" path="res://scenes/items/Resources/Resource_item.gd" id="1_iqkbf"]
+[ext_resource type="Texture2D" uid="uid://taplfgu5xn8f" path="res://tilemap/plants/Tomato.png" id="2_1wr8r"]
+
+[resource]
+resource_name = "Tomato"
+script = ExtResource("1_iqkbf")
+display_name = "Tomato"
+texture = ExtResource("2_1wr8r")

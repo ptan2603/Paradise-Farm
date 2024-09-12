@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://dshewmsa3lkpe"]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_50ktc"]
+[ext_resource type="Texture2D" uid="uid://bkg15sdyevp6v" path="res://tilemap/farmingTilesheetComplete.png" id="1_pmnmm"]
+[ext_resource type="PackedScene" uid="uid://jdxulccgn2u1" path="res://scenes/shopmenu.tscn" id="3_jakue"]
+[ext_resource type="PackedScene" uid="uid://bdu0qrq5s4tly" path="res://scenes/Object/Pickups/pickup_corn_seedpack.tscn" id="4_cgpmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5wkt"]
+atlas = ExtResource("1_pmnmm")
+region = Rect2(144, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlpsh"]
+atlas = ExtResource("1_pmnmm")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geqch"]
+atlas = ExtResource("1_pmnmm")
+region = Rect2(176, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qwkk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5wkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlpsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geqch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abcuu"]
+atlas = ExtResource("1_pmnmm")
+region = Rect2(0, 170, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00iby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abcuu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yakh"]
+size = Vector2(21.4412, 16.5735)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysqgm"]
+radius = 8.23529
+
+[node name="shop" type="StaticBody2D"]
+z_index = -1
+scale = Vector2(1.7, 1.7)
+script = ExtResource("1_50ktc")
+
+[node name="npc" type="AnimatedSprite2D" parent="."]
+z_index = -3
+position = Vector2(-0.588235, 5.29412)
+scale = Vector2(0.75, 0.71)
+sprite_frames = SubResource("SpriteFrames_0qwkk")
+frame_progress = 0.484099
+
+[node name="shopart" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(-5.96046e-08, 0)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_00iby")
+
+[node name="Node" type="CollisionShape2D" parent="."]
+position = Vector2(-0.720589, 3.47794)
+shape = SubResource("RectangleShape2D_4yakh")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.588235, 12.9412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9.116e-08, 1.90735e-06)
+shape = SubResource("CircleShape2D_ysqgm")
+metadata/_edit_lock_ = true
+
+[node name="shopmenu" parent="." instance=ExtResource("3_jakue")]
+visible = false
+z_index = 1
+position = Vector2(-18.8235, -24.1176)
+scale = Vector2(0.3, 0.3)
+
+[node name="PickupCornSeedpack" parent="." instance=ExtResource("4_cgpmm")]
+visible = false
+position = Vector2(18.8235, 10)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

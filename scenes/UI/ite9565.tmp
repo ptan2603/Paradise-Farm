@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://11r4yy5qcgkl"]
+
+[ext_resource type="Texture2D" uid="uid://ca476k880eo5c" path="res://tilemap/Object/Cuoc.png" id="1_o22yu"]
+[ext_resource type="Script" path="res://scenes/ItemButton.gd" id="2_npndn"]
+
+[node name="ItemButton" type="Button"]
+custom_minimum_size = Vector2(22, 22)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -12.0
+offset_right = 11.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_o22yu")
+flat = true
+script = ExtResource("2_npndn")

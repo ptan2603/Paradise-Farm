@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://dy0iirjryh4np"]
+
+[ext_resource type="Script" path="res://scenes/select_bar.gd" id="1_h2dfb"]
+[ext_resource type="Texture2D" uid="uid://6xcjcqwkipls" path="res://tilemap/inventory/hotbar_background.png" id="2_7qf75"]
+[ext_resource type="PackedScene" uid="uid://11r4yy5qcgkl" path="res://scenes/UI/item_button.tscn" id="4_3guwq"]
+[ext_resource type="Texture2D" uid="uid://c1ripe5v5ngj7" path="res://tilemap/Object/cuocdat.png" id="5_gu58x"]
+[ext_resource type="Texture2D" uid="uid://cn3hg54i5yrbn" path="res://tilemap/Object/axe.png" id="6_7ta8o"]
+[ext_resource type="Resource" uid="uid://cnje05b04p2eb" path="res://scenes/items/copper_pickaxe.tres" id="6_vb8cq"]
+[ext_resource type="Texture2D" uid="uid://pnuk86qfhl7y" path="res://tilemap/plants/seed_corn.png" id="7_5slj2"]
+[ext_resource type="Resource" uid="uid://cbjrno5iel6ct" path="res://scenes/items/copper_axe.tres" id="7_pa3m8"]
+[ext_resource type="Texture2D" uid="uid://bdefwowj5ubke" path="res://tilemap/plants/seed_tomato.png" id="9_dx0tt"]
+
+[node name="SelectBar" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -40.0
+offset_right = -131.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_h2dfb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 258.0
+offset_bottom = 35.0
+texture = ExtResource("2_7qf75")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 113.0
+offset_bottom = 31.0
+theme_override_constants/h_separation = 2
+columns = 10
+
+[node name="ItemButton" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = ExtResource("5_gu58x")
+flat = false
+item = ExtResource("6_vb8cq")
+
+[node name="ItemButton2" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = ExtResource("6_7ta8o")
+flat = false
+item = ExtResource("7_pa3m8")
+
+[node name="ItemButton3" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = null
+flat = false
+
+[node name="ItemButton4" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = ExtResource("7_5slj2")
+flat = false
+
+[node name="ItemButton5" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = ExtResource("9_dx0tt")
+flat = false
+
+[node name="ItemButton6" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = null
+flat = false
+
+[node name="ItemButton7" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = null
+flat = false
+
+[node name="ItemButton8" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = null
+flat = false
+
+[node name="ItemButton9" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = null
+flat = false
+
+[node name="ItemButton10" parent="GridContainer" instance=ExtResource("4_3guwq")]
+layout_mode = 2
+icon = null
+flat = false

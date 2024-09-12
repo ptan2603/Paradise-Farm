@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EquippableItem" load_steps=3 format=3 uid="uid://djubq8xdhbhy4"]
+
+[ext_resource type="Script" path="res://scenes/items/equippable_item.gd" id="1_2um82"]
+[ext_resource type="Texture2D" uid="uid://ca476k880eo5c" path="res://tilemap/Object/Cuoc.png" id="2_tjrfx"]
+
+[resource]
+script = ExtResource("1_2um82")
+display_name = "Test "
+texture = ExtResource("2_tjrfx")

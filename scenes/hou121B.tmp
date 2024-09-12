@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw3xu2dd4ffu4"]
+
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_x16vj"]
+[ext_resource type="Texture2D" uid="uid://c85bbot10xo0y" path="res://tilemap/House.png" id="2_bf82d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chubx"]
+size = Vector2(73, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1bjs"]
+size = Vector2(16, 20)
+
+[node name="House" type="Node2D"]
+script = ExtResource("1_x16vj")
+
+[node name="House" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("2_bf82d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -13)
+shape = SubResource("RectangleShape2D_chubx")
+metadata/_edit_lock_ = true
+
+[node name="DoorWay" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWay"]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_n1bjs")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="DoorWay" to="." method="_on_door_way_body_entered"]
+[connection signal="body_exited" from="DoorWay" to="." method="_on_door_way_body_exited"]

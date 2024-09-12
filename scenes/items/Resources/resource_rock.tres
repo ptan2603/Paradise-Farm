@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://xmn0j17a80ut"]
+
+[ext_resource type="Script" path="res://scenes/items/Resources/Resource_item.gd" id="1_2i1y8"]
+[ext_resource type="Texture2D" uid="uid://dhn51wwiabo5y" path="res://tilemap/Object/rock.png" id="2_yynfq"]
+
+[resource]
+resource_name = "Rock"
+script = ExtResource("1_2i1y8")
+display_name = "Rock"
+texture = ExtResource("2_yynfq")

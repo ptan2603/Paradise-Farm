@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://bef4eiadjqwf4"]
+
+[ext_resource type="Script" path="res://scenes/items/Resources/Resource_item.gd" id="1_go0sx"]
+[ext_resource type="Texture2D" uid="uid://dgmiakayn242t" path="res://tilemap/plants/Corn.png" id="2_3aeix"]
+
+[resource]
+resource_name = "Corn"
+script = ExtResource("1_go0sx")
+display_name = "Corn"
+texture = ExtResource("2_3aeix")

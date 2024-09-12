@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk5ejmvlomt67"]
+
+[ext_resource type="Script" path="res://scenes/Object/Resources/stone.gd" id="1_cqwuh"]
+[ext_resource type="Texture2D" uid="uid://cho3i3ljfmdss" path="res://tilemap/Object/Decorations.png" id="1_nkh1c"]
+[ext_resource type="Resource" uid="uid://b52wfkrlqb15x" path="res://scenes/Object/Resources/Type/minable.tres" id="2_ojt8r"]
+[ext_resource type="PackedScene" uid="uid://clvhxhswgbspw" path="res://scenes/Object/Pickups/pickup_rock.tscn" id="2_ymh8g"]
+[ext_resource type="PackedScene" uid="uid://cfjgqabojy6ng" path="res://scenes/Effects/depleted_resources_eplosion.tscn" id="4_p8kcw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwys8"]
+atlas = ExtResource("1_nkh1c")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6yc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwys8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_427j2"]
+radius = 13.1529
+
+[node name="stone" type="StaticBody2D"]
+z_index = -2
+script = ExtResource("1_cqwuh")
+node_types = Array[Resource("res://scenes/Object/Resources/Type/resource_node_type.gd")]([ExtResource("2_ojt8r")])
+starting_resources = 5
+pickup_type = ExtResource("2_ymh8g")
+depleted_effect = ExtResource("4_p8kcw")
+
+[node name="bigstone" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_v6yc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_427j2")

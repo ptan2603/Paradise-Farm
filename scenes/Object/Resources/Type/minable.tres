@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResourceNodeType" load_steps=2 format=3 uid="uid://b52wfkrlqb15x"]
+
+[ext_resource type="Script" path="res://scenes/Object/Resources/Type/resource_node_type.gd" id="1_cdrah"]
+
+[resource]
+script = ExtResource("1_cdrah")
+display_name = "Minable"

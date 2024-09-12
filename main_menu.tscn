@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtehbo7mrk5p1"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_1gwjo"]
+[ext_resource type="Texture2D" uid="uid://of6gsuyhrble" path="res://tilemap/tile12.png" id="2_jhc1r"]
+[ext_resource type="Texture2D" uid="uid://bdclk3kxac1id" path="res://tilemap/br/sky.png" id="2_rsq1w"]
+[ext_resource type="Texture2D" uid="uid://n05nc8xt5np" path="res://tilemap/br/glacial_mountains_lightened.png" id="3_8fg4h"]
+[ext_resource type="Texture2D" uid="uid://cip4vw3ol6myx" path="res://tilemap/br/clouds_bg.png" id="5_govva"]
+[ext_resource type="Texture2D" uid="uid://bvtk6cwdqwd8r" path="res://tilemap/br/Background1.png" id="6_c47xi"]
+[ext_resource type="FontFile" uid="uid://cw8tvefhfl1gn" path="res://tilemap/PilotCommandSpacedItalic-eZGMl.otf" id="7_l5enj"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_1gwjo")
+
+[node name="Sky" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.823529)
+position = Vector2(320, 179.5)
+scale = Vector2(1.66667, 1.6713)
+texture = ExtResource("2_rsq1w")
+
+[node name="GlacialMountainsLightened" type="Sprite2D" parent="."]
+position = Vector2(320, 109)
+scale = Vector2(1.66667, 1)
+texture = ExtResource("3_8fg4h")
+
+[node name="Tile12" type="Sprite2D" parent="."]
+position = Vector2(294, 24)
+scale = Vector2(1.24805, 0.803571)
+texture = ExtResource("2_jhc1r")
+vframes = 2
+
+[node name="CloudsBg" type="Sprite2D" parent="."]
+position = Vector2(319, 162)
+scale = Vector2(1.66406, 1)
+texture = ExtResource("5_govva")
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(320, 284.75)
+scale = Vector2(1, 1.0102)
+texture = ExtResource("6_c47xi")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = 277.0
+offset_right = 337.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("7_l5enj")
+text = "Play
+"
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

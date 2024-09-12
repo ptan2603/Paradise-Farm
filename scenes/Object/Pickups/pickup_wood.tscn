@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dawt214crj2hc"]
+
+[ext_resource type="Script" path="res://scenes/Object/Pickups/pickup.gd" id="1_n8odj"]
+[ext_resource type="Resource" uid="uid://cowon202hrrv3" path="res://scenes/items/Resources/resource_wood.tres" id="2_amfex"]
+[ext_resource type="Texture2D" uid="uid://c8di7tx0xkqxl" path="res://tilemap/Object/wood.png" id="3_ypulu"]
+[ext_resource type="AudioStream" uid="uid://juudcho3y6b1" path="res://sounds/item_pickup.wav" id="4_qn0ta"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3od5"]
+radius = 4.66667
+
+[node name="Pickup_wood" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_n8odj")
+resource_type = ExtResource("2_amfex")
+item_data = ExtResource("2_amfex")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h3od5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ypulu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qn0ta")
